@@ -1,24 +1,275 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dDf-OP-zTz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="923-Xe-1wt">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tabBarController id="dDf-OP-zTz" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TNP-kv-xgO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Q7N-pP-7eG" kind="relationship" relationship="viewControllers" id="ghy-u8-F6A"/>
+                        <segue destination="Wgn-Nx-w0m" kind="relationship" relationship="viewControllers" id="bno-Sj-rID"/>
+                        <segue destination="RFY-ns-uD8" kind="relationship" relationship="viewControllers" id="d7z-x7-IJv"/>
+                        <segue destination="6Lp-s7-RPJ" kind="relationship" relationship="viewControllers" id="pbH-Yd-ov5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJZ-JF-y9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="411" y="209"/>
+        </scene>
+        <!--ANAHABER-->
+        <scene sceneID="HeD-zf-X3n">
+            <objects>
+                <navigationController id="Q7N-pP-7eG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="ANAHABER" image="homekit" catalog="system" landscapeImage="homekit" id="Hct-pc-cY6"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="AdI-N9-ITT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Vgc-sr-BLH" kind="relationship" relationship="rootViewController" id="TV7-wE-0fM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vvt-3t-0fa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-739" y="895"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="ytn-zj-ngE">
+            <objects>
+                <viewController id="XhQ-Mg-DC8" customClass="DetailVC" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8F4-xL-RVX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y60-cY-6a0">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Eo7-a7-r7k"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Eo7-a7-r7k" firstAttribute="trailing" secondItem="y60-cY-6a0" secondAttribute="trailing" id="2En-Eg-z5a"/>
+                            <constraint firstItem="y60-cY-6a0" firstAttribute="leading" secondItem="Eo7-a7-r7k" secondAttribute="leading" id="Us0-4R-Adj"/>
+                            <constraint firstItem="y60-cY-6a0" firstAttribute="top" secondItem="Eo7-a7-r7k" secondAttribute="top" id="abD-60-p3z"/>
+                            <constraint firstItem="Eo7-a7-r7k" firstAttribute="bottom" secondItem="y60-cY-6a0" secondAttribute="bottom" id="kxc-by-o1h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="N8g-LP-2RI"/>
+                    <connections>
+                        <outlet property="webView" destination="y60-cY-6a0" id="9Rw-Df-0of"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wp8-4W-lDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="410" y="2297"/>
+        </scene>
+        <!--ANAHABER-->
+        <scene sceneID="YwJ-eH-l4E">
+            <objects>
+                <viewController id="Vgc-sr-BLH" customClass="MainVC" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6m1-Uj-DZ5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="360" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wib-mz-qkr">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0ln-wf-5rB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wib-mz-qkr" firstAttribute="leading" secondItem="0ln-wf-5rB" secondAttribute="leading" id="5dV-uz-cKH"/>
+                            <constraint firstItem="0ln-wf-5rB" firstAttribute="bottom" secondItem="wib-mz-qkr" secondAttribute="bottom" id="eZV-kQ-3o8"/>
+                            <constraint firstItem="wib-mz-qkr" firstAttribute="top" secondItem="0ln-wf-5rB" secondAttribute="top" id="efk-4V-gTK"/>
+                            <constraint firstItem="0ln-wf-5rB" firstAttribute="trailing" secondItem="wib-mz-qkr" secondAttribute="trailing" id="pCA-VB-Tpj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ANAHABER" id="RHo-ZI-cTp"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="wib-mz-qkr" id="67h-Q6-qir"/>
+                        <segue destination="XhQ-Mg-DC8" kind="show" identifier="toGoDetail" id="kc7-1W-d1e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4b-bB-TJI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-739" y="1582"/>
+        </scene>
+        <!--SPOR-->
+        <scene sceneID="KET-ep-BGo">
+            <objects>
+                <viewController id="kvl-5U-J97" customClass="SportVC" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IrB-hB-Nka">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="360" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="awr-hZ-kbL">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GV1-pz-RVY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="awr-hZ-kbL" firstAttribute="leading" secondItem="GV1-pz-RVY" secondAttribute="leading" id="OLP-bX-Sqt"/>
+                            <constraint firstItem="awr-hZ-kbL" firstAttribute="top" secondItem="GV1-pz-RVY" secondAttribute="top" id="TzX-3e-A8j"/>
+                            <constraint firstItem="GV1-pz-RVY" firstAttribute="bottom" secondItem="awr-hZ-kbL" secondAttribute="bottom" id="ZbD-v5-lhe"/>
+                            <constraint firstItem="GV1-pz-RVY" firstAttribute="trailing" secondItem="awr-hZ-kbL" secondAttribute="trailing" id="o4Y-za-Vkc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="SPOR" id="3aB-EC-ykG"/>
+                    <connections>
+                        <outlet property="sportTableView" destination="awr-hZ-kbL" id="RPp-HN-IX8"/>
+                        <segue destination="XhQ-Mg-DC8" kind="show" identifier="toGoDetail" id="Xkj-LK-4d1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QW9-zi-OTR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="1582"/>
+        </scene>
+        <!--EĞLENCE-->
+        <scene sceneID="Uo5-oj-7W2">
+            <objects>
+                <viewController id="ZNz-eO-o05" customClass="EntertainmentVC" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JfM-zq-Gkb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="360" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mgl-s8-biI">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ekV-PH-Sca"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ekV-PH-Sca" firstAttribute="trailing" secondItem="Mgl-s8-biI" secondAttribute="trailing" id="SWA-cy-FWM"/>
+                            <constraint firstItem="ekV-PH-Sca" firstAttribute="bottom" secondItem="Mgl-s8-biI" secondAttribute="bottom" id="jTj-ak-mjm"/>
+                            <constraint firstItem="Mgl-s8-biI" firstAttribute="leading" secondItem="ekV-PH-Sca" secondAttribute="leading" id="lOe-TO-TBc"/>
+                            <constraint firstItem="Mgl-s8-biI" firstAttribute="top" secondItem="ekV-PH-Sca" secondAttribute="top" id="zsG-6N-ddw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="EĞLENCE" id="Mhr-6K-u5F"/>
+                    <connections>
+                        <outlet property="entertainmentTableView" destination="Mgl-s8-biI" id="5ys-WF-aKw"/>
+                        <segue destination="XhQ-Mg-DC8" kind="show" identifier="toGoDetail" id="ODB-yz-x9m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KfW-sC-Szv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="1582"/>
+        </scene>
+        <!--TEKNOLOJİ-->
+        <scene sceneID="OY4-0O-Bqt">
+            <objects>
+                <viewController id="tIK-J1-mwO" customClass="TechnologyVC" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zEu-U6-qbg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="360" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TbI-tI-ief">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g0q-TW-mZM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g0q-TW-mZM" firstAttribute="trailing" secondItem="TbI-tI-ief" secondAttribute="trailing" id="1Wg-L9-LQ1"/>
+                            <constraint firstItem="TbI-tI-ief" firstAttribute="leading" secondItem="g0q-TW-mZM" secondAttribute="leading" id="OgC-eT-1hn"/>
+                            <constraint firstItem="TbI-tI-ief" firstAttribute="top" secondItem="g0q-TW-mZM" secondAttribute="top" id="ZBI-a3-whh"/>
+                            <constraint firstItem="g0q-TW-mZM" firstAttribute="bottom" secondItem="TbI-tI-ief" secondAttribute="bottom" id="nk8-TN-QmZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TEKNOLOJİ" id="l1T-Jx-7bP"/>
+                    <connections>
+                        <outlet property="technologyTableView" destination="TbI-tI-ief" id="1xk-Xz-Mtq"/>
+                        <segue destination="XhQ-Mg-DC8" kind="show" identifier="toGoDetail" id="Vay-Wc-6sC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oNB-BJ-3zH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1558" y="1582"/>
+        </scene>
+        <!--SPOR-->
+        <scene sceneID="8cN-UG-TOX">
+            <objects>
+                <navigationController id="Wgn-Nx-w0m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="SPOR" image="sportscourt" catalog="system" id="rRR-N3-DMS"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="RJt-Dy-Pho">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kvl-5U-J97" kind="relationship" relationship="rootViewController" id="eHX-06-ce1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvS-V1-62u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="895"/>
+        </scene>
+        <!--EGLENCE-->
+        <scene sceneID="TNw-sY-Dnp">
+            <objects>
+                <navigationController id="RFY-ns-uD8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="EGLENCE" image="person.3.sequence.fill" catalog="system" id="kG5-FV-QPI"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="DHB-zP-eho">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZNz-eO-o05" kind="relationship" relationship="rootViewController" id="70y-6b-jLU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Pg-vk-R4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="895"/>
+        </scene>
+        <!--TEKNOLOJİ-->
+        <scene sceneID="pyp-93-lzF">
+            <objects>
+                <navigationController id="6Lp-s7-RPJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TEKNOLOJİ" image="wrench.and.screwdriver.fill" catalog="system" id="kSw-x2-ndi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="omy-Kr-muG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tIK-J1-mwO" kind="relationship" relationship="rootViewController" id="HDi-4I-9Do"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJb-8O-oND" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="895"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ODB-yz-x9m"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="person.3.sequence.fill" catalog="system" width="128" height="58"/>
+        <image name="sportscourt" catalog="system" width="128" height="84"/>
+        <image name="wrench.and.screwdriver.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
